@@ -181,7 +181,7 @@ This is a personal portfolio project, but feel free to fork and customize for yo
 
 ## 🙏 Acknowledgments
 
-- Original inspiration from [Original Creator if applicable]
+- Original inspiration from adrianhajdin
 - 3D models created in Blender
 - Icons from Lucide React
 - Fonts from Google Fonts (Mona Sans)
