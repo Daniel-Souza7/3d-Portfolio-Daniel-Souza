@@ -11,10 +11,10 @@ const Thesis = () => {
             <div className="w-full h-full md:px-20 px-5">
                 <div
                     onClick={handleThesisClick}
-                    className="cursor-pointer hover:opacity-90 transition-opacity max-w-7xl mx-auto"
+                    className="cursor-pointer max-w-7xl mx-auto"
                 >
-                    {/* STATIC CARD - No animations */}
-                    <div className="card-border rounded-xl p-6">
+                    {/* STATIC CARD with hover effect like Education */}
+                    <div className="card-border rounded-xl p-6 hover:border-white-50 transition-colors duration-300">
                         <div className="flex flex-col md:flex-row items-center gap-8 p-4">
                             {/* Icon/Image Side */}
                             <div className="flex-shrink-0 relative">
