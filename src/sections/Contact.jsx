@@ -83,7 +83,7 @@ const Contact = () => {
     };
 
     const handleCVClick = () => {
-        window.open("https://drive.google.com/file/d/1DRGZrb-Je-xt_JxVRxpy2tsFL35FgGvE/view?usp=sharing", "_blank", "noopener,noreferrer");
+        window.open("https://drive.google.com/file/d/1wlXuAYHGXQN-AYcFiOBV35tysG1j5D73/view?usp=sharing", "_blank", "noopener,noreferrer");
     };
 
     return (
