@@ -1,8 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense } from "react";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "../components/models/contact/ContactExperience";
+import ErrorBoundary from "../components/ErrorBoundary";
+import Toast from "../components/Toast";
+import Loading3D from "../components/Loading3D";
 
 const Contact = () => {
     const formRef = useRef(null);
@@ -11,6 +14,7 @@ const Contact = () => {
     const hasTriggered = useRef(false);
     const [loading, setLoading] = useState(false);
     const [showHint, setShowHint] = useState(false);
+    const [toast, setToast] = useState(null);
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -63,7 +67,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Show loading state
+        setLoading(true);
 
         try {
             await emailjs.sendForm(
@@ -73,12 +77,24 @@ const Contact = () => {
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
             );
 
-            // Reset form and stop loading
+            // Show success toast
+            setToast({
+                type: "success",
+                message: "Message sent successfully! I'll get back to you soon."
+            });
+
+            // Reset form
             setForm({ name: "", email: "", message: "" });
         } catch (error) {
-            console.error("EmailJS Error:", error); // Optional: show toast
+            console.error("EmailJS Error:", error);
+
+            // Show error toast
+            setToast({
+                type: "error",
+                message: "Failed to send message. Please try again later."
+            });
         } finally {
-            setLoading(false); // Always stop loading, even on error
+            setLoading(false);
         }
     };
 
@@ -88,6 +104,13 @@ const Contact = () => {
 
     return (
         <section id="contact" ref={sectionRef} className="flex-center section-padding">
+            {toast && (
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={() => setToast(null)}
+                />
+            )}
             <div className="w-full h-full md:px-10 px-5">
                 <TitleHeader
                     title="Get in Touch – Let's Connect"
@@ -164,7 +187,11 @@ const Contact = () => {
                                     </div>
                                 </div>
                             )}
-                            <ContactExperience />
+                            <ErrorBoundary>
+                                <Suspense fallback={<Loading3D />}>
+                                    <ContactExperience />
+                                </Suspense>
+                            </ErrorBoundary>
                         </div>
                     </div>
                 </div>

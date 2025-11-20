@@ -1,5 +1,13 @@
+import TitleHeader from "../components/TitleHeader";
+
 const Thesis = () => {
-    const handleThesisClick = () => {
+    const handleDocumentsClick = () => {
+        // TODO: Replace with your thesis documents link
+        window.open("https://linktr.ee/salvadorsouza", "_blank", "noopener,noreferrer");
+    };
+
+    const handleGameClick = () => {
+        // TODO: Replace with your thesis game link
         window.open("https://linktr.ee/salvadorsouza", "_blank", "noopener,noreferrer");
     };
 
@@ -9,41 +17,74 @@ const Thesis = () => {
             className="flex-center md:mt-10 mt-5 section-padding xl:px-0"
         >
             <div className="w-full h-full md:px-20 px-5">
-                <div
-                    onClick={handleThesisClick}
-                    className="cursor-pointer max-w-7xl mx-auto"
-                >
-                    {/* STATIC CARD with hover effect like Education */}
-                    <div className="card-border rounded-xl p-6 hover:border-white-50 transition-colors duration-300">
-                        <div className="flex flex-col md:flex-row items-center gap-8 p-4">
-                            {/* Icon/Image Side */}
-                            <div className="flex-shrink-0 relative">
-                                <div className="size-24 md:size-32 flex items-center justify-center">
-                                    <img
-                                        src="/images/thesis-icon.webp"
-                                        alt="Thesis"
-                                        className="w-[150%] h-[150%] object-contain"
-                                        loading="lazy"
-                                    />
+                <div className="max-w-7xl mx-auto">
+                    {/* Title and Description */}
+                    <TitleHeader
+                        title="My Master's Thesis"
+                        sub="Machine Learning for High-Dimensional Optimal Stopping in Finance"
+                    />
+
+                    <p className="text-white-50 text-base md:text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6 mb-12">
+                        Traditional methods fail when pricing high-dimensional derivatives.
+                        My research explores ML-enhanced optimal stopping algorithms that price
+                        complex financial instruments in seconds, scaling from 2 to 2000+ assets.
+                    </p>
+
+                    {/* Two Cards Grid */}
+                    <div className="grid md:grid-cols-2 gap-6 mt-8">
+                        {/* Thesis Documents Card */}
+                        <div
+                            onClick={handleDocumentsClick}
+                            className="cursor-pointer card-border rounded-xl overflow-hidden hover:border-white-50 transition-all duration-300 group"
+                        >
+                            <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+                                <img
+                                    src="/images/thesis-documents.jpg"
+                                    alt="Thesis Documents"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
+                                    Thesis Documents
+                                </h3>
+                                <p className="text-white-50 text-sm md:text-base">
+                                    Explore my research papers, methodology, and academic findings.
+                                </p>
+                                <div className="mt-4 text-white font-semibold inline-flex items-center gap-2">
+                                    <span>View Documents</span>
+                                    <span className="group-hover:translate-x-1 transition-transform">→</span>
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Content Side */}
-                            <div className="flex-1 text-center md:text-left">
-                                <h2 className="text-white text-3xl md:text-4xl font-bold mb-2">
-                                    My Master's Thesis
-                                </h2>
-                                <p className="text-white-50 text-sm md:text-base italic mb-4">
-                                    "Machine Learning Approaches to High-Dimensional Optimal Stopping for Complex Products in Quantitative Finance"
+                        {/* Thesis Game Card */}
+                        <div
+                            onClick={handleGameClick}
+                            className="cursor-pointer card-border rounded-xl overflow-hidden hover:border-white-50 transition-all duration-300 group"
+                        >
+                            <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-green-900/20 to-blue-900/20">
+                                <img
+                                    src="/images/thesis-game.jpg"
+                                    alt="Thesis Interactive Game"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
+                                    Interactive Game
+                                </h3>
+                                <p className="text-white-50 text-sm md:text-base">
+                                    Try the interactive simulation demonstrating my thesis algorithms.
                                 </p>
-                                <p className="text-white-50 text-lg md:text-xl leading-relaxed inline">
-                                    Traditional methods fail when pricing high-dimensional derivatives, taking hours or becoming computationally impossible. Discover how ML-enhanced optimal stopping algorithms price complex financial instruments in seconds, scaling effortlessly from 2 to 2000 underlying assets without sacrificing accuracy.{" "}
-                                    <span className="text-white font-semibold inline-flex items-center gap-1">
-                                        <span>
-                                            Check my progress →
-                                        </span>
-                                    </span>
-                                </p>
+                                <div className="mt-4 text-white font-semibold inline-flex items-center gap-2">
+                                    <span>Play Game</span>
+                                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -5,6 +6,8 @@ import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
+import ErrorBoundary from "../components/ErrorBoundary";
+import Loading3D from "../components/Loading3D";
 
 const Hero = () => {
   useGSAP(() => {
@@ -66,7 +69,11 @@ const Hero = () => {
         {/* RIGHT: 3D Model or Visual */}
         <figure>
           <div className="hero-3d-layout">
-            <HeroExperience />
+            <ErrorBoundary>
+              <Suspense fallback={<Loading3D />}>
+                <HeroExperience />
+              </Suspense>
+            </ErrorBoundary>
           </div>
         </figure>
       </div>
