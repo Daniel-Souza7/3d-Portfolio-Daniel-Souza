@@ -39,7 +39,7 @@ const Thesis = () => {
                         >
                             <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-blue-900/20 to-purple-900/20">
                                 <img
-                                    src="/images/thesis-documents.jpg"
+                                    src="/images/thesis-documents.gif"
                                     alt="Thesis Documents"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     loading="lazy"
