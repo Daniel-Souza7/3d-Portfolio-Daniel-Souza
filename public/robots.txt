@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://danielsouza.com/sitemap.xml
+Sitemap: https://daniel-souza.vercel.app/sitemap.xml
