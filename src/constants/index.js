@@ -4,6 +4,10 @@ const navLinks = [
     link: "#work",
   },
   {
+    name: "Thesis",
+    link: "#thesis",
+  },
+  {
     name: "Experience",
     link: "#education",
   },
