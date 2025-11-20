@@ -8,7 +8,7 @@ const Thesis = () => {
 
     const handleGameClick = () => {
         // TODO: Replace with your thesis game link
-        window.open("https://linktr.ee/salvadorsouza", "_blank", "noopener,noreferrer");
+        window.open("https://thesis-game.vercel.app", "_blank", "noopener,noreferrer");
     };
 
     return (
@@ -26,8 +26,8 @@ const Thesis = () => {
 
                     <p className="text-white-50 text-base md:text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6 mb-12">
                         Traditional methods fail when pricing high-dimensional derivatives.
-                        My research explores ML-enhanced optimal stopping algorithms that price
-                        complex financial instruments in seconds, scaling from 2 to 2000+ assets.
+                        My research explores ML-enhanced optimal stopping algorithms that realistically price 360
+                        complex exotic options in seconds, up to 2400x faster than classical algorithms and easily scaling up from 1 to 2000+ underlying assets.
                     </p>
 
                     {/* Two Cards Grid */}
